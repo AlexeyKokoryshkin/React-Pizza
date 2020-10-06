@@ -1,9 +1,52 @@
 import React from 'react'
 
+const Categories = ({ items }) => {
+
+    const [activeItem, setActiveItem] = React.useState(null);      // Hooks
+
+    const onSelectItem = (arg) => {
+        setActiveItem(arg);
+    }
+
+    return (
+        < div className="categories" >
+            <ul>
+                <li
+                    className={activeItem === null ? 'active' : ''}
+                    onClick={() => onSelectItem(null)}>
+                    Все
+                </li>
+
+            {items.map((name, arg) => (
+                <li
+                    className={activeItem === arg ? 'active' : ''}
+                    onClick={() => onSelectItem(arg)}
+                    key={arg}>
+                    {name}
+                </li>
+            ))}
+            </ul>
+        </div>
+    )
+
+}
+
+export default Categories
+
+
+
+/* import React from 'react'
+
 class Categories extends React.Component {
 
     state = {
-        activeItem: 3
+        activeItem: 0
+    }
+
+    onSelectItem = (arg) => {
+        this.setState({
+            activeItem: arg
+        })
     }
 
     render() {
@@ -13,11 +56,11 @@ class Categories extends React.Component {
         return (
             < div className="categories" >
                 <ul>
-                    <li className="active">Все</li>
                     {items.map((name, arg) => (
                         <li
                             className={this.state.activeItem === arg ? 'active' : ''}
-                            onClick={() => onClickItem(name)} key={arg}>{name}</li>
+                            onClick={() => this.onSelectItem(arg)}
+                            key={arg}>{name}</li>
                     ))}
                 </ul>
             </div>
@@ -25,18 +68,5 @@ class Categories extends React.Component {
     }
 }
 
-/* const Categories = ({ items, onClickItem }) => {
-    return (
-        < div className="categories" >
-            <ul>
-                <li className="active">Все</li>
-                {items.map((name, arg) => (
-                    <li onClick={() => onClickItem(name)} key={arg}>{name}</li>
-                ))}
-            </ul>
-        </div>
-    )
 
-} */
-
-export default Categories
+export default Categories */
