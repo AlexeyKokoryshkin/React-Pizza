@@ -17,7 +17,8 @@ const Categories = ({ items }) => {
                     Все
                 </li>
 
-            {items.map((name, arg) => (
+                {items &&
+                    items.map((name, arg) => (
                 <li
                     className={activeItem === arg ? 'active' : ''}
                     onClick={() => onSelectItem(arg)}
