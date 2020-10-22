@@ -2,25 +2,25 @@ import React from 'react';
 
 const SortPopup = ({ items }) => {
 
-    const [visiblePopup, setVisiblePopup] = React.useState(false);
+    const [visiblePopup, setVisiblePopup] = React.useState(false); // false - не отображать popup
 
-    const [activeItem, setActiveItem] = React.useState(0);
+    const [activeItem, setActiveItem] = React.useState(0);  // 0 - при первом рендере отображать первый эллемент из сортировки в popup окне
 
     const sortRef = React.useRef();
 
     const activeLabel = items[activeItem];
 
     const toogleVisiblePopup = () => {
-        setVisiblePopup(!visiblePopup);
+        setVisiblePopup(!visiblePopup);  // По клику вызываем popup
     }
 
     const handleOutsideClick = (e) => {
         if (!e.path.includes(sortRef.current))
-            setVisiblePopup(false);
+            setVisiblePopup(false);      // Метод закрытия popup 
     }
 
     React.useEffect(() => {
-        document.body.addEventListener('click', handleOutsideClick);
+        document.body.addEventListener('click', handleOutsideClick);  // Вызываем метод закрытия popup по клику на любую область окна
     }, [])
 
 

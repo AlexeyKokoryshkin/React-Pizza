@@ -16,7 +16,7 @@ const Home = ({ items }) => {
             <div className="content__items">
                 {
                     items.map((obj) =>
-                        console.log(obj)
+                        <PizzaBlock key={obj.id} {...obj} />   // Деструктуризировал {obj}. В нем хранятся свойства {pizzas} из db.json 
                     )
                 }
 

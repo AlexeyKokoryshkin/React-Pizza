@@ -2,10 +2,10 @@ import React from 'react'
 
 const Categories = ({ items }) => {
 
-    const [activeItem, setActiveItem] = React.useState(null);      // Hooks
+    const [activeItem, setActiveItem] = React.useState(null);   // В initialState передал null для отображения всего каталога при первом рендере страницы   
 
     const onSelectItem = (arg) => {
-        setActiveItem(arg);
+        setActiveItem(arg);  // В arg хранятся ключи эллементов из категорий items. По клику добавляем класс active. 
     }
 
     return (
@@ -13,15 +13,15 @@ const Categories = ({ items }) => {
             <ul>
                 <li
                     className={activeItem === null ? 'active' : ''}
-                    onClick={() => onSelectItem(null)}>
+                    onClick={() => onSelectItem(null)}> 
                     Все
-                </li>
+                </li> 
 
                 {items &&
                     items.map((name, arg) => (
                 <li
                     className={activeItem === arg ? 'active' : ''}
-                    onClick={() => onSelectItem(arg)}
+                    onClick={() => onSelectItem(arg)} 
                     key={arg}>
                     {name}
                 </li>

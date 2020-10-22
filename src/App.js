@@ -11,9 +11,7 @@ function App() {
   React.useEffect(() => {
     fetch('http://localhost:3000/db.json')
       .then((response) => response.json())
-      .then((json) => {
-        setPizzas(json.pizzas);
-      })
+      .then((json) => setPizzas(json.pizzas))
   }, []);
 
   return (
