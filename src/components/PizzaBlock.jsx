@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {  //Взял только те пропсы из {obj} которые интересуют с помощью {} - деструкт-я
 
@@ -73,6 +74,21 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {  //Взял т
             </div>
         </div>
     )
+}
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+    price: PropTypes.number,
+    types: PropTypes.arrayOf(PropTypes.number).isRequired,
+    sizes: PropTypes.arrayOf(PropTypes.number).isRequired
+}
+
+PizzaBlock.defaultProps = {
+    name: '---',
+    price: 0,
+    types: [],
+    sizes: []
 }
 
 export default PizzaBlock
