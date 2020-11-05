@@ -8,7 +8,7 @@ const SortPopup = ({ items }) => {
 
     const sortRef = React.useRef();
 
-    const activeLabel = items[activeItem];
+    const activeLabel = items[activeItem].name;
 
     const toogleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup);  // По клику вызываем popup
@@ -53,12 +53,12 @@ const SortPopup = ({ items }) => {
             { visiblePopup && <div className="sort__popup">
                 <ul>
                     {
-                        items.map((name, arg) => (
+                        items.map((obj, arg) => (
                             <li
                                 className={activeItem === arg ? 'active' : ''}
                                 onClick={() => onSelectItem(arg)}
                                 key={arg}>
-                                {name}
+                                {obj.name}
                             </li>
                         ))}
                 </ul>
