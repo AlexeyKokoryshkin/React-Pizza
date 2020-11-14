@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Categories = ({ items, onClickItem }) => {
+const Categories = React.memo(function Categories({ items, onClickItem }) {
 
     const [activeItem, setActiveItem] = React.useState(null);   // В initialState передал null для отображения всего каталога при первом рендере страницы   
 
@@ -32,5 +32,5 @@ const Categories = ({ items, onClickItem }) => {
     )
 
 }
-
+)
 export default Categories
