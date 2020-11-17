@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import LoadingBlock from './LoadingBlock'
 
 const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {  //Взял только те пропсы из {obj} которые интересуют с помощью {} - деструкт-я
 
@@ -15,8 +16,6 @@ const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {  //Взял т
     const onSelectSize = (arg) => {
         setActiveSize(arg)
     }
-
-
 
     return (
         <div className="pizza-block">
@@ -88,7 +87,7 @@ PizzaBlock.defaultProps = {
     name: '---',
     price: 0,
     types: [],
-    sizes: []
+    sizes: [],
 }
 
 export default PizzaBlock
