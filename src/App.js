@@ -3,9 +3,6 @@ import { Route } from 'react-router-dom';
 import { Header } from './components';
 import { Cart, Home } from './pages';
 
-import { useDispatch } from 'react-redux';
-
-
 
 function App() {
   

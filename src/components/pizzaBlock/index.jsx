@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import LoadingBlock from './LoadingBlock'
 
 const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {  //Взял только те пропсы из {obj} которые интересуют с помощью {} - деструкт-я
 
